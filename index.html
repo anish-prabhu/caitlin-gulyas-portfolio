@@ -846,9 +846,14 @@
       });
     })();
 
-    // Sticky header shadow
+    // Sticky header shadow + track header height for mobile nav dropdown
     (function() {
       const header = document.querySelector('.site-header');
+      function updateHeaderH() {
+        document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+      }
+      updateHeaderH();
+      window.addEventListener('resize', updateHeaderH, { passive: true });
       window.addEventListener('scroll', () => {
         header.classList.toggle('site-header--scrolled', window.scrollY > 20);
       }, { passive: true });
