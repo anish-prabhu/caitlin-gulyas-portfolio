@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caitlin Gulyas — Marketing & Brand Professional</title>
-  <meta name="description" content="Marketing and brand professional building scalable, community-driven campaigns across global markets. Experience in partnerships, talent, PR, and event activations.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Caitlin Gulyas — Marketing & Brand Professional">
-  <meta property="og:description" content="Building scalable, community-driven campaigns across global markets.">
+  <title>Caitlin Gulyas — Marketing &amp; Brand Professional</title>
+  <meta name="description" content="Marketing and brand professional with experience across partnerships, talent, and PR, focused on building scalable, community-driven campaigns and driving measurable growth.">
+  <meta property="og:title" content="Caitlin Gulyas — Marketing &amp; Brand Professional">
+  <meta property="og:description" content="Marketing and brand professional with experience across partnerships, talent, and PR, focused on building scalable, community-driven campaigns and driving measurable growth.">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
@@ -17,38 +15,149 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* ─── Page-level overrides & one-off components ─── */
+
+    /* Hero image — clean, no stat cards */
+    .hero-image-wrapper { position: relative; overflow: visible; background: none; box-shadow: none; border-radius: 0; }
+    .hero-image-clip {
+      width: 100%; max-width: 440px; aspect-ratio: 3/4;
+      border-radius: var(--radius-2xl); overflow: hidden;
+      background: var(--color-surface);
+      box-shadow: 0 12px 40px oklch(0.25 0.03 45 / 0.14);
+    }
+    .hero-image-clip img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+    /* Hero tagline style */
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      max-width: 52ch;
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    /* Hero industry chips */
+    .hero-industries {
+      display: flex; flex-wrap: wrap; gap: var(--space-2);
+      margin-top: var(--space-1);
+    }
+
+    /* Brands bar */
+    .brands-bar {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: var(--space-4); padding-top: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+      margin-top: var(--space-2);
+    }
+    .brands-bar-label {
+      font-family: var(--font-body); font-size: var(--text-xs);
+      color: var(--color-text-faint); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .brand-pill {
+      font-family: var(--font-body); font-size: var(--text-xs); font-weight: 700;
+      color: var(--color-text-faint); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* PR press item accent colors */
+    .press-item--navy .press-item-val { color: var(--color-secondary); }
+    .press-item--sage .press-item-val { color: var(--color-sage); }
+
+    /* About: industries label */
+    .industries-title {
+      font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-text-faint); margin-bottom: var(--space-3); display: block;
+    }
+
+    /* Skills section */
+    .skills-section { margin-top: var(--space-10); }
+    .skills-section-title {
+      font-family: var(--font-display); font-size: var(--text-lg);
+      font-weight: 500; color: var(--color-text); margin-bottom: var(--space-6);
+    }
+
+    /* Passions section */
+    .passions-section { margin-top: var(--space-10); }
+    .passions-section-title {
+      font-family: var(--font-display); font-size: var(--text-lg);
+      font-weight: 500; color: var(--color-text); margin-bottom: var(--space-2);
+    }
+
+    /* Events image — landscape (portrait photo, show full height) */
+    .cs-visual--landscape { min-height: 500px; }
+    .cs-visual--landscape img {
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* Single-column case study (no side image) */
+    .cs-inner--single {
+      display: block;
+    }
+    .cs-content--full {
+      padding: clamp(var(--space-6), 4vw, var(--space-10));
+    }
+
+    /* PR section image — letterboxed, fully visible */
+    #cs-pr .cs-visual {
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #cs-pr .cs-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    /* Resume section */
+    .resume-section { background: var(--color-surface); }
+
+    /* Contact */
+    .contact-aside h3 { margin-bottom: var(--space-4); }
+
+    /* Mobile hero image size */
+    @media (max-width: 768px) {
+      .hero-image-wrapper { max-width: 300px; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <!-- ═══════════════════════════════════════════ HEADER ═══ -->
+  <!-- ═══════════════════ HEADER ═══ -->
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="#home" class="logo" aria-label="Caitlin Gulyas — home">
-        <!-- SVG Logo Mark -->
         <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M22 12C20.5 10.5 18.5 10 16.5 10.5C13 11.5 11 15 12 18.5C13 22 16 24 19 24C21 24 22.5 23 23.5 21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="15.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M23 14.5C21.3 12.3 18.8 11.5 16.5 12C13.2 12.8 11 15.8 11 18.5C11 21.7 13.5 24 16.5 24C18.5 24 20.3 23.1 21.5 21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20.5 18.5H24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <span class="logo-text">Caitlin Gulyas</span>
       </a>
 
       <nav aria-label="Primary navigation">
         <ul class="nav-links" role="list" id="navLinks">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" id="nav-home">Home</a></li>
+          <li><a href="#work" id="nav-work">Work</a></li>
+          <li><a href="#about" id="nav-about">About</a></li>
+          <li><a href="#resume" id="nav-resume">Resume</a></li>
+          <li><a href="#contact" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:var(--space-2)">
+      <div class="header-right">
         <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
@@ -61,33 +170,36 @@
 
   <main id="main-content">
 
-    <!-- ═══════════════════════════════════════════ HOME / HERO ═══ -->
+    <!-- ═══════════════════ HOME / HERO ═══ -->
     <section class="hero section" id="home" aria-labelledby="hero-heading">
       <div class="hero-grid">
         <div class="hero-content">
-          <span class="hero-eyebrow">Marketing &amp; Brand</span>
           <h1 class="hero-title" id="hero-heading">Caitlin<br>Gulyas</h1>
-          <p class="hero-subtitle">Building scalable, community-driven campaigns across global markets. From SXSW stages to FS8 studio openings, I connect brand storytelling to measurable growth.</p>
+          <p class="hero-tagline">Marketing and brand professional with experience across partnerships, talent, and PR, focused on building scalable, community-driven campaigns and driving measurable growth.</p>
+
           <div class="hero-cta-group">
-            <a href="#work" class="btn btn--primary">View my work</a>
+            <a href="./assets/CAITLIN-GULYAS_Resume-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
             <a href="#contact" class="btn btn--secondary">Get in touch</a>
           </div>
-          <div class="brands-row">
-            <span class="brand-name">F45</span>
-            <span class="brand-name">FS8</span>
-            <span class="brand-name">SXSW</span>
-            <span class="brand-name">UTA</span>
-            <span class="brand-name">Virgin Music</span>
+
+          <div class="brands-bar">
+            <span class="brands-bar-label">Worked with</span>
+            <span class="brand-pill">F45 Training</span>
+            <span class="brand-pill">FS8 Pilates</span>
+            <span class="brand-pill">SXSW</span>
+            <span class="brand-pill">Virgin Music</span>
+            <span class="brand-pill">UTA</span>
+            <span class="brand-pill">Paramount</span>
           </div>
         </div>
+
         <div class="hero-visual">
           <div class="hero-image-wrapper">
-            <div class="headshot-placeholder" aria-label="Professional headshot coming soon">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>
-              </svg>
-              <span>Photo coming soon</span>
+            <div class="hero-image-clip">
+              <img src="./assets/headshot.jpg" alt="Caitlin Gulyas" loading="eager">
             </div>
           </div>
         </div>
@@ -96,172 +208,296 @@
 
     <hr class="section-divider">
 
-    <!-- ═══════════════════════════════════════════ WORK / PORTFOLIO ═══ -->
-    <section class="section work-section" id="work" aria-labelledby="work-heading">
+    <!-- ═══════════════════ WORK / PORTFOLIO ═══ -->
+    <section class="section" id="work" aria-labelledby="work-heading">
       <div class="container container--wide">
         <div class="section-header fade-in">
           <span class="section-eyebrow">Selected Work</span>
           <h2 class="section-title" id="work-heading">Portfolio</h2>
-          <p class="section-subtitle">Case studies from global campaigns, event activations, and brand launches spanning fitness, music, and entertainment.</p>
+          <p class="section-subtitle">Case studies spanning global campaigns, event activations, and brand launches across fitness, music, and entertainment.</p>
         </div>
 
         <div class="case-studies">
 
-          <!-- Case Study 1: Ambassador Program -->
-          <article class="case-study fade-in">
-            <div class="case-study-visual">
-              <svg class="case-study-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-                <circle cx="12" cy="8" r="3"/>
-                <path d="M7 21v-1a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1"/>
-                <circle cx="19" cy="6" r="2"/>
-                <path d="M21 16v-1a3 3 0 0 0-3-3"/>
-                <circle cx="5" cy="6" r="2"/>
-                <path d="M3 16v-1a3 3 0 0 1 3-3"/>
-              </svg>
-            </div>
-            <div class="case-study-content">
-              <span class="case-study-tag">Brand &amp; Community</span>
-              <h3 class="case-study-title">Global Ambassador Program Management</h3>
-              <p class="case-study-description">Led the evolution of F45's ambassador program across F45, FS8, and Recovery—transforming it from a high-volume studio-visit model into a strategic, impact-driven initiative focused on events, education, and brand storytelling.</p>
-              <div class="case-study-stats">
-                <div class="stat">
-                  <span class="stat-value">2,000+</span>
-                  <span class="stat-label">Studio visits globally</span>
+          <!-- ── CS 1: Global Ambassador Program ── -->
+          <article class="case-study fade-in" id="cs-ambassador">
+            <div class="cs-inner cs-inner--single">
+              <div class="cs-content cs-content--full">
+                <span class="cs-tag">Brand &amp; Community · F45 Training, FS8 Pilates &amp; Recovery by F45</span>
+                <h3 class="cs-title">Global Ambassador Program</h3>
+                <p class="cs-lead">Led F45 Training's global athlete ambassador program from scratch. Transformed a studio-visit model into a strategic initiative focused on events, education, and brand storytelling across three brands: F45 Training, FS8 Pilates, and Recovery by F45.</p>
+
+                <div class="cs-stats">
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">2,000+</span>
+                    <span class="cs-stat-lbl">Global studio visits</span>
+                  </div>
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">532K+</span>
+                    <span class="cs-stat-lbl">Combined social following</span>
+                  </div>
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">13</span>
+                    <span class="cs-stat-lbl">Athletes managed</span>
+                  </div>
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">8</span>
+                    <span class="cs-stat-lbl">Countries</span>
+                  </div>
                 </div>
-                <div class="stat">
-                  <span class="stat-value">13</span>
-                  <span class="stat-label">Ambassadors managed</span>
+
+                <!-- Athlete photo grid -->
+                <div class="athlete-grid-section">
+                  <span class="athlete-grid-label">2026 Athlete Roster</span>
+                  <div class="athlete-grid">
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-jess-bell.jpg" alt="Jessica Bell" loading="lazy">
+                      <span class="athlete-name">Jess Bell</span>
+                      <span class="athlete-country">🇺🇸 US</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-nic-wilson.jpg" alt="Nic Wilson" loading="lazy">
+                      <span class="athlete-name">Nic Wilson</span>
+                      <span class="athlete-country">🇺🇸 US</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-cristina-chan.jpg" alt="Cristina Chan" loading="lazy">
+                      <span class="athlete-name">Cristina Chan</span>
+                      <span class="athlete-country">🇺🇸 US</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-mariam-allam.jpg" alt="Mariam Allam" loading="lazy">
+                      <span class="athlete-name">Mariam Allam</span>
+                      <span class="athlete-country">🇨🇦 Canada</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-rilwan-anibaba.jpg" alt="Rilwan Anibaba" loading="lazy">
+                      <span class="athlete-name">Rilwan Anibaba</span>
+                      <span class="athlete-country">🇬🇧 UK</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-john-karpathakis.jpg" alt="John Karpathakis" loading="lazy">
+                      <span class="athlete-name">John Karpathakis</span>
+                      <span class="athlete-country">🇦🇪 UAE</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-april-kong.jpg" alt="April Kong" loading="lazy">
+                      <span class="athlete-name">April Kong</span>
+                      <span class="athlete-country">🇸🇬 Singapore</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-hoon-choi.jpg" alt="Hoon Choi" loading="lazy">
+                      <span class="athlete-name">Hoon Choi</span>
+                      <span class="athlete-country">🇰🇷 Korea</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-jordi-duff.jpg" alt="Jordi Duff" loading="lazy">
+                      <span class="athlete-name">Jordi Duff</span>
+                      <span class="athlete-country">🇳🇿 NZ</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-alice-evans.jpg" alt="Alice Evans" loading="lazy">
+                      <span class="athlete-name">Alice Evans</span>
+                      <span class="athlete-country">🇦🇺 Australia</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-morgan-mitchell.jpg" alt="Morgan Mitchell" loading="lazy">
+                      <span class="athlete-name">Morgan Mitchell</span>
+                      <span class="athlete-country">🇦🇺 Australia</span>
+                    </div>
+                    <div class="athlete-card">
+                      <img class="athlete-photo" src="./assets/athlete-kassidy-cook.jpg" alt="Kassidy Cook" loading="lazy">
+                      <span class="athlete-name">Kassidy Cook</span>
+                      <span class="athlete-country">🇺🇸 US</span>
+                    </div>
+                  </div>
+
+                  <!-- Compact country strip -->
+                  <div class="globe-strip">
+                    <span class="globe-strip-label">8 Countries · 4 Continents</span>
+                    <span class="globe-country">🇺🇸 United States</span>
+                    <span class="globe-country">🇨🇦 Canada</span>
+                    <span class="globe-country">🇬🇧 UK</span>
+                    <span class="globe-country">🇦🇪 UAE</span>
+                    <span class="globe-country">🇸🇬 Singapore</span>
+                    <span class="globe-country">🇰🇷 South Korea</span>
+                    <span class="globe-country">🇳🇿 New Zealand</span>
+                    <span class="globe-country">🇦🇺 Australia</span>
+                  </div>
                 </div>
-                <div class="stat">
-                  <span class="stat-value">395K+</span>
-                  <span class="stat-label">Social following</span>
+
+                <div class="cs-links">
+                  <a href="https://www.instagram.com/p/C1zu4NQx3DD/?hl=en" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Team Announcement
+                  </a>
+                  <a href="https://www.instagram.com/p/DWofTFogMB-/" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    F45 × Reebok
+                  </a>
+                  <a href="https://www.instagram.com/p/DVHD27-iJmL/?img_index=1" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Education Workshops
+                  </a>
+                  <a href="https://www.instagram.com/p/DVhNIRQAD67/?img_index=1" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Ambassador Content
+                  </a>
                 </div>
-              </div>
-              <div class="case-study-links">
-                <a href="https://www.instagram.com/p/C1zu4NQx3DD/?hl=en" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Athlete Announcement
-                </a>
-                <a href="https://www.instagram.com/p/DWofTFogMB-/" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  F45 x Reebok
-                </a>
               </div>
             </div>
           </article>
 
-          <!-- Case Study 2: Event Activations -->
-          <article class="case-study fade-in">
-            <div class="case-study-visual">
-              <svg class="case-study-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-                <path d="M17 11h1a3 3 0 0 1 0 6h-1"/>
-                <path d="M7 11H6a3 3 0 0 0 0 6h1"/>
-                <path d="M12 2v4"/>
-                <path d="M8 4l1 2"/>
-                <path d="M16 4l-1 2"/>
-                <rect x="7" y="8" width="10" height="3" rx="1"/>
-                <path d="M9 17v4"/>
-                <path d="M15 17v4"/>
-                <path d="M7 21h10"/>
-              </svg>
-            </div>
-            <div class="case-study-content">
-              <span class="case-study-tag">Events &amp; Partnerships</span>
-              <h3 class="case-study-title">Global Event Activations &amp; Run Club Program</h3>
-              <p class="case-study-description">Developed and executed global event activations and community initiatives including HYROX shakeout runs and local run clubs, driving community engagement and brand visibility across multiple international markets.</p>
-              <div class="case-study-stats">
-                <div class="stat">
-                  <span class="stat-value">11+</span>
-                  <span class="stat-label">Run club activations</span>
+          <!-- ── CS 2: Event Activations ── -->
+          <article class="case-study fade-in" id="cs-events">
+            <div class="cs-inner cs-inner--reverse">
+              <div class="cs-content">
+                <span class="cs-tag">Events &amp; Partnerships · F45 Training &amp; FS8 Pilates</span>
+                <h3 class="cs-title">Global Event Activations &amp; Run Club Program</h3>
+                <p class="cs-lead">Developed and executed a global event strategy built around community, fitness culture, and brand partnerships — including HYROX shakeout runs, city run clubs, studio grand openings, and ambassador-led activations across six countries.</p>
+
+                <div class="cs-callout cs-callout--navy">
+                  <strong>Event Partners:</strong> HYROX · Reebok · Red Bull · Hyperice · Active Escapes
                 </div>
-                <div class="stat">
-                  <span class="stat-value">7+</span>
-                  <span class="stat-label">Global markets</span>
+
+                <div class="cs-stats">
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">11+</span>
+                    <span class="cs-stat-lbl">Run club activations globally</span>
+                  </div>
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">6</span>
+                    <span class="cs-stat-lbl">Cities across 4 continents</span>
+                  </div>
+                </div>
+
+                <div class="cs-links">
+                  <a href="https://www.instagram.com/p/DJkJcizOVN8/?hl=en&img_index=1" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--navy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    HYROX Run Club
+                  </a>
+                  <a href="https://www.instagram.com/p/DRm-684ADPE/?img_index=1" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--navy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Run Club Community
+                  </a>
+                  <a href="https://www.instagram.com/p/DGOn11gJwgL/?img_index=1" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--navy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    FS8 Lohi Grand Opening
+                  </a>
+                  <a href="https://www.instagram.com/reel/DVyjixujrks/" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--navy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Popsugar × FS8
+                  </a>
+                  <a href="https://www.theurbanlist.com/sydney/a-list/f45-run-club-sydney" target="_blank" rel="noopener noreferrer" class="cs-link cs-link--navy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Urban List Sydney
+                  </a>
                 </div>
               </div>
-              <div class="case-study-links">
-                <a href="https://www.instagram.com/p/DJkJcizOVN8/?hl=en&img_index=1" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  HYROX Run Club
-                </a>
-                <a href="https://www.instagram.com/p/DRm-684ADPE/?img_index=1" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Run Club Community
-                </a>
+              <div class="cs-visual cs-visual--landscape">
+                <img src="./assets/events-singapore.jpg" alt="F45 run club Singapore — Gardens by the Bay" loading="lazy" style="object-position: center center;">
               </div>
             </div>
           </article>
 
-          <!-- Case Study 3: PR & Studio Launches -->
-          <article class="case-study fade-in">
-            <div class="case-study-visual">
-              <svg class="case-study-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
-              </svg>
-            </div>
-            <div class="case-study-content">
-              <span class="case-study-tag">PR &amp; Media</span>
-              <h3 class="case-study-title">Public Relations &amp; FS8 Studio Launches</h3>
-              <p class="case-study-description">Supported global PR efforts while leading localized marketing strategies for 15 FS8 Pilates studio openings, combining earned media, influencer activations, and event execution to drive brand visibility and measurable growth.</p>
-              <div class="case-study-stats">
-                <div class="stat">
-                  <span class="stat-value">4,500+</span>
-                  <span class="stat-label">Member leads generated</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value">100M+</span>
-                  <span class="stat-label">Media impressions</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-value">15</span>
-                  <span class="stat-label">Studios launched</span>
-                </div>
+          <!-- ── CS 3: PR & Studio Launches ── -->
+          <article class="case-study fade-in" id="cs-pr">
+            <div class="cs-inner">
+              <div class="cs-visual">
+                <img src="./assets/fs8-studios.jpg" alt="FS8 Pilates — New Studios Coming Soon" loading="lazy">
               </div>
-              <div class="case-study-links">
-                <a href="https://www.businesswire.com/news/home/20250529180018/en/Recovery-Made-Easy-F45-Training-Partners-with-Hyperice-to-Enhance-Exercise-Recovery-Experience-Globally" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  F45 x Hyperice Press Release
-                </a>
-                <a href="https://www.instagram.com/p/DGOn11gJwgL/?img_index=1" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  FS8 Grand Opening
-                </a>
+              <div class="cs-content">
+                <span class="cs-tag">Public Relations &amp; Media · F45 Training &amp; FS8 Pilates</span>
+                <h3 class="cs-title">PR Strategy &amp; FS8 Pilates Studio Launches</h3>
+                <p class="cs-lead">Managed 15 FS8 Pilates studio launches — local media outreach, influencer activations, and grand opening logistics — while partnering with PR agencies on earned media campaigns that drove over 100M impressions.</p>
+
+                <div class="press-results">
+                  <div class="press-item">
+                    <span class="press-item-name">This is F45 Training</span>
+                    <span class="press-item-val">117.8M+</span>
+                    <span class="press-item-sub">impressions · 369 placements</span>
+                  </div>
+                  <div class="press-item press-item--navy">
+                    <span class="press-item-name">F45 × Red Bull</span>
+                    <span class="press-item-val">64.9M+</span>
+                    <span class="press-item-sub">impressions · 191 placements</span>
+                  </div>
+                  <div class="press-item press-item--sage">
+                    <span class="press-item-name">F45 × Hyperice</span>
+                    <span class="press-item-val">117.4M</span>
+                    <span class="press-item-sub">potential impressions · 98 outlets</span>
+                  </div>
+                  <div class="press-item">
+                    <span class="press-item-name">Studio launches</span>
+                    <span class="press-item-val">4,500+</span>
+                    <span class="press-item-sub">member leads generated</span>
+                  </div>
+                </div>
+
+                <div class="outlets-row">
+                  <span class="outlet-tag">Yahoo! News</span>
+                  <span class="outlet-tag">AP News</span>
+                  <span class="outlet-tag">Benzinga</span>
+                  <span class="outlet-tag">Boston Herald</span>
+                  <span class="outlet-tag">Pittsburgh Post-Gazette</span>
+                  <span class="outlet-tag">WRAL</span>
+                  <span class="outlet-tag">MediaPost</span>
+                </div>
+
+                <div class="cs-links">
+                  <a href="https://www.businesswire.com/news/home/20250529180018/en/Recovery-Made-Easy-F45-Training-Partners-with-Hyperice-to-Enhance-Exercise-Recovery-Experience-Globally" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    F45 × Hyperice Press Release
+                  </a>
+                  <a href="https://www.businesswire.com/news/home/20250122345676/en/F45-Training-Celebrates-Unprecedented-Growth-in-2024-Ready-to-Lead-the-Fitness-Industry-Forward" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    F45 Growth 2024
+                  </a>
+                  <a href="https://www.mediapost.com/publications/article/405582/this-is-f45-training-fitness-chain-breaks-globa.html" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    MediaPost Exclusive
+                  </a>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Case Study 4: Music Industry -->
-          <article class="case-study fade-in">
-            <div class="case-study-visual">
-              <svg class="case-study-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-                <path d="M9 18V5l12-2v13"/>
-                <circle cx="6" cy="18" r="3"/>
-                <circle cx="18" cy="16" r="3"/>
-              </svg>
-            </div>
-            <div class="case-study-content">
-              <span class="case-study-tag">Music &amp; Entertainment</span>
-              <h3 class="case-study-title">Music Industry Marketing, Events &amp; Talent Operations</h3>
-              <p class="case-study-description">Built a foundation in music marketing, live events, and talent operations through roles at South by Southwest, Virgin Music Group, and United Talent Agency—supporting campaigns, festival programming, and global touring logistics.</p>
-              <div class="case-study-stats">
-                <div class="stat">
-                  <span class="stat-value">40+</span>
-                  <span class="stat-label">Releases per week (VMG)</span>
+          <!-- ── CS 4: Music Industry ── -->
+          <article class="case-study fade-in" id="cs-music">
+            <div class="cs-inner cs-inner--reverse">
+              <div class="cs-content">
+                <span class="cs-tag">Music &amp; Entertainment · VMG · UTA · SXSW · YouTube Music</span>
+                <h3 class="cs-title">Music Industry Marketing, Events &amp; Talent Operations</h3>
+                <p class="cs-lead">Built deep expertise across every layer of the music industry through roles at Virgin Music Group, United Talent Agency, SXSW, and Cognizant (YouTube Music) — from festival programming and live touring to album campaign strategy and artist channel management.</p>
+
+                <div class="cs-callout cs-callout--sage">
+                  <strong>Select artists worked with:</strong> Orville Peck · Pink Sweat$ · Milky Chance · Bob Moses · X Ambassadors · Jack Harlow · Diplo · Post Malone · NF · Clairo · Bad Omens · David Kushner · Chase Atlantic, and programming for Billie Eilish at SXSW.
+                </div>
+
+                <div class="cs-stats">
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">40+</span>
+                    <span class="cs-stat-lbl">Releases/week at VMG</span>
+                  </div>
+                  <div class="cs-stat">
+                    <span class="cs-stat-val">15+</span>
+                    <span class="cs-stat-lbl">Tours &amp; festivals supported</span>
+                  </div>
+                </div>
+
+                <div class="cs-links">
+                  <a href="https://www.instagram.com/p/CtKOJOxOzeh/" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    David Kushner Album Campaign
+                  </a>
+                  <a href="https://www.billboard.com/culture/events/sxsw-2019-billie-eilish-recap-8502803/" target="_blank" rel="noopener noreferrer" class="cs-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    SXSW × Billie Eilish (Billboard)
+                  </a>
                 </div>
               </div>
-              <div class="case-study-links">
-                <a href="https://www.instagram.com/p/CtKOJOxOzeh/" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  David Kushner Campaign
-                </a>
-                <a href="https://www.billboard.com/culture/events/sxsw-2019-billie-eilish-recap-8502803/" target="_blank" rel="noopener noreferrer" class="case-study-link">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  SXSW feat. Billie Eilish
-                </a>
+              <div class="cs-visual">
+                <img src="./assets/music-logos.jpg" alt="Virgin Music Group, UTA, SXSW, and YouTube Music" loading="lazy">
               </div>
             </div>
           </article>
@@ -272,8 +508,8 @@
 
     <hr class="section-divider">
 
-    <!-- ═══════════════════════════════════════════ ABOUT ═══ -->
-    <section class="section about-section" id="about" aria-labelledby="about-heading">
+    <!-- ═══════════════════ ABOUT ═══ -->
+    <section class="section" id="about" aria-labelledby="about-heading">
       <div class="container container--wide">
         <div class="section-header fade-in">
           <span class="section-eyebrow">About</span>
@@ -282,138 +518,262 @@
 
         <div class="about-grid fade-in">
           <div class="about-text">
-            <p>I'm a marketing and brand professional with a passion for building communities and telling stories that actually move people. My career has taken me from programming SXSW showcases and coordinating global music tours to leading ambassador programs and launching Pilates studios around the world.</p>
-            <p>What ties it all together is a love for connecting brands with audiences in meaningful, measurable ways—whether that's through a 400-person run club in Sydney, a press release that hits 100M+ impressions, or an influencer activation that fills a new studio on opening day.</p>
-            <p>I'm moving to Seattle in June 2026 and looking for my next opportunity in marketing, communications, or brand strategy. I thrive in fast-paced, creative environments where I can combine strategic thinking with hands-on execution.</p>
-            <p>Outside of work, you can find me in a Pilates class, at the theater, reading on the couch with my Aussie Doodle Moose, or exploring a new city.</p>
+            <p>I'm a marketing and brand professional with a passion for building communities and telling stories that move people. My career has taken me from programming SXSW showcases and coordinating global music tours to independently building a global athlete ambassador program and launching Pilates studios around the world.</p>
+            <p>What ties it all together is a love for connecting brands with audiences in meaningful, measurable ways — whether that's through a community run club in Sydney, a press campaign that hits 100M impressions, or an influencer activation that fills a new studio on opening day.</p>
+            <p>I'm relocating to Seattle in June 2026 and looking for my next role in marketing, communications, or brand strategy. I thrive in fast-paced environments where strategic thinking meets hands-on execution.</p>
+            <p>Outside of work, you'll find me at a Pilates class, deep in a good book, catching a musical, or walking my Aussie Doodle, Moose.</p>
+
           </div>
 
           <div class="about-sidebar">
             <div class="about-detail-group">
               <span class="about-detail-label">Location</span>
-              <span class="about-detail-value">Moving to Seattle, WA — June 2026</span>
+              <span class="about-detail-value">Moving to Seattle, WA — June 2026<br><em style="font-size:var(--text-xs);color:var(--color-text-faint)">Open to remote, hybrid, or in-person</em></span>
             </div>
             <div class="about-detail-group">
               <span class="about-detail-label">Education</span>
-              <span class="about-detail-value">BS, Public Relations<br>University of Texas at Austin<br>Moody College of Communication</span>
+              <span class="about-detail-value">BS, Public Relations<br>University of Texas at Austin<br>Moody College of Communication, 2019</span>
             </div>
             <div class="about-detail-group">
-              <span class="about-detail-label">Open to</span>
-              <span class="about-detail-value">Remote, hybrid, or in-person roles in Seattle</span>
-            </div>
-            <div class="about-detail-group">
-              <span class="about-detail-label">Key Skills</span>
-              <ul class="skills-list" role="list">
-                <li>Brand Strategy</li>
-                <li>PR & Media</li>
-                <li>Event Activations</li>
-                <li>Influencer Marketing</li>
-                <li>Campaign Execution</li>
-                <li>Community Building</li>
-                <li>Content Strategy</li>
-                <li>Partnership Management</li>
-                <li>Adobe Suite</li>
-                <li>Tableau</li>
-                <li>Social Media</li>
-              </ul>
+              <span class="about-detail-label">Contact</span>
+              <span class="about-detail-value">
+                <a href="mailto:Caitlin.Gulyas@Gmail.com" style="color:var(--color-primary);text-decoration:none;">Caitlin.Gulyas@Gmail.com</a><br>
+                <a href="tel:9729558802" style="color:var(--color-text-muted);text-decoration:none;">972-955-8802</a>
+              </span>
             </div>
           </div>
         </div>
 
-        <div class="passions-grid fade-in">
-          <div class="passion-card">
-            <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M9 18V5l12-2v13"/>
-              <circle cx="6" cy="18" r="3"/>
-              <circle cx="18" cy="16" r="3"/>
-            </svg>
-            <span class="passion-label">Musical Theater</span>
-          </div>
-          <div class="passion-card">
-            <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-            </svg>
-            <span class="passion-label">The Arts</span>
-          </div>
-          <div class="passion-card">
-            <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            <span class="passion-label">Pilates & Fitness</span>
-          </div>
-          <div class="passion-card">
-            <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-            <span class="passion-label">Reading</span>
-          </div>
-          <div class="passion-card">
-            <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-            <span class="passion-label">Moose the Dog</span>
+        <!-- Skills -->
+        <div class="skills-section fade-in">
+          <h3 class="skills-section-title">Skills &amp; Tools</h3>
+          <div class="skills-categories">
+            <div>
+              <span class="skill-category-label">Campaign &amp; Brand</span>
+              <div class="skills-row">
+                <span class="skill-tag skill-tag--primary">Brand Strategy</span>
+                <span class="skill-tag skill-tag--primary">Campaign Execution</span>
+                <span class="skill-tag skill-tag--primary">Content Strategy</span>
+                <span class="skill-tag skill-tag--primary">Community Building</span>
+                <span class="skill-tag skill-tag--primary">Influencer Marketing</span>
+                <span class="skill-tag skill-tag--primary">Ambassador Programs</span>
+                <span class="skill-tag skill-tag--primary">PR &amp; Media Relations</span>
+                <span class="skill-tag skill-tag--primary">Partnership Management</span>
+              </div>
+            </div>
+            <div>
+              <span class="skill-category-label">Events &amp; Activations</span>
+              <div class="skills-row">
+                <span class="skill-tag skill-tag--navy">Event Activations</span>
+                <span class="skill-tag skill-tag--navy">Event Production</span>
+                <span class="skill-tag skill-tag--navy">Festival Programming</span>
+                <span class="skill-tag skill-tag--navy">Talent Coordination</span>
+                <span class="skill-tag skill-tag--navy">Studio Launch Strategy</span>
+              </div>
+            </div>
+            <div>
+              <span class="skill-category-label">Analytics &amp; Research</span>
+              <div class="skills-row">
+                <span class="skill-tag">SWOT Analysis</span>
+                <span class="skill-tag">Mintel Reports</span>
+                <span class="skill-tag">PRIZM</span>
+                <span class="skill-tag">Social Mention</span>
+                <span class="skill-tag">Luminate</span>
+                <span class="skill-tag">Brand24</span>
+                <span class="skill-tag">Meltwater</span>
+                <span class="skill-tag">Klear</span>
+              </div>
+            </div>
+            <div>
+              <span class="skill-category-label">Tools &amp; Software</span>
+              <div class="skills-row">
+                <span class="skill-tag">Adobe Suite</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Klaviyo</span>
+                <span class="skill-tag">Filemaker</span>
+                <span class="skill-tag">UTour</span>
+                <span class="skill-tag">Dropbox</span>
+                <span class="skill-tag">MRCConnect</span>
+              </div>
+            </div>
+            <div>
+              <span class="skill-category-label">Social &amp; Digital</span>
+              <div class="skills-row">
+                <span class="skill-tag">Instagram</span>
+                <span class="skill-tag">TikTok</span>
+                <span class="skill-tag">Twitter / X</span>
+                <span class="skill-tag">YouTube</span>
+                <span class="skill-tag">Spotify</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Wix</span>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Passions -->
+        <div class="passions-section fade-in">
+          <h3 class="passions-section-title">Outside of work</h3>
+          <div class="passions-grid">
+
+            <div class="passion-card">
+              <!-- Music note: Musical Theater -->
+              <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+              </svg>
+              <span class="passion-label">Musical Theater</span>
+            </div>
+
+            <div class="passion-card">
+              <!-- Film grid: Music, TV & Film -->
+              <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                <line x1="7" y1="2" x2="7" y2="22"/>
+                <line x1="17" y1="2" x2="17" y2="22"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <line x1="2" y1="7" x2="7" y2="7"/>
+                <line x1="2" y1="17" x2="7" y2="17"/>
+                <line x1="17" y1="17" x2="22" y2="17"/>
+                <line x1="17" y1="7" x2="22" y2="7"/>
+              </svg>
+              <span class="passion-label">Music, TV &amp; Film</span>
+            </div>
+
+            <div class="passion-card">
+              <!-- Running figure: Pilates & Fitness -->
+              <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="13" cy="4" r="1.5"/>
+                <path d="M5.5 19.5l3.5-5 2.5 2.5 3-4.5"/>
+                <path d="M7 7.5l2.5 3L13 9l3-2"/>
+                <path d="M17 7l-1 3"/>
+                <path d="M9 19.5l1-3"/>
+              </svg>
+              <span class="passion-label">Pilates &amp; Fitness</span>
+            </div>
+
+            <div class="passion-card">
+              <!-- Book: Reading -->
+              <svg class="passion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span class="passion-label">Reading</span>
+            </div>
+
+            <!-- Moose photo -->
+            <div class="passion-card">
+              <img src="./assets/moose.jpg" alt="Moose, Caitlin's Aussie Doodle" class="passion-img">
+              <span class="passion-label">My Dog Moose</span>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- ═══════════════════════════════════════════ RESUME ═══ -->
+    <!-- ═══════════════════ RESUME ═══ -->
     <section class="section resume-section" id="resume" aria-labelledby="resume-heading">
       <div class="container container--wide">
         <div class="section-header fade-in">
           <span class="section-eyebrow">Resume</span>
           <h2 class="section-title" id="resume-heading">Experience</h2>
+          <p class="section-subtitle">A summary of key roles — download the full resume for complete details.</p>
         </div>
 
-        <div class="experience-grid fade-in">
-          <div class="experience-card">
-            <span class="experience-card-company">F45 Training / FIT House of Brands</span>
-            <span class="experience-card-role">PR & Marketing Coordinator</span>
-            <span class="experience-card-date">January 2024 — Present</span>
+        <div class="experience-timeline fade-in">
+
+          <div class="exp-card">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <span class="exp-company">F45 Training / FIT House of Brands</span>
+              <span class="exp-headline">Global ambassador programs, studio launches &amp; brand partnerships</span>
+              <span class="exp-role">PR &amp; Marketing Coordinator</span>
+              <span class="exp-date">January 2024 — Present</span>
+              <p class="exp-summary">Built and led a global athlete ambassador program across 8 countries, managed 15 FS8 Pilates studio launches, and drove 100M+ media impressions through PR campaigns with partners including Reebok, Red Bull, and Hyperice.</p>
+            </div>
           </div>
-          <div class="experience-card">
-            <span class="experience-card-company">Virgin Music Group</span>
-            <span class="experience-card-role">Commercial Marketing Coordinator</span>
-            <span class="experience-card-date">January 2023 — January 2024</span>
+
+          <div class="exp-card">
+            <div class="exp-dot" style="background:var(--color-secondary)"></div>
+            <div class="exp-body">
+              <span class="exp-company">Virgin Music Group</span>
+              <span class="exp-headline">40+ releases/week across campaigns and artist relations</span>
+              <span class="exp-role">Commercial Marketing Coordinator</span>
+              <span class="exp-date">January 2023 — January 2024</span>
+              <p class="exp-summary">Coordinated campaigns for 40+ releases per week across a team of 15, liaising directly with artists and managers during promo events and maintaining daily/weekly performance reports.</p>
+            </div>
           </div>
-          <div class="experience-card">
-            <span class="experience-card-company">United Talent Agency</span>
-            <span class="experience-card-role">Music Touring Assistant</span>
-            <span class="experience-card-date">September 2021 — January 2023</span>
+
+          <div class="exp-card">
+            <div class="exp-dot" style="background:var(--color-sage)"></div>
+            <div class="exp-body">
+              <span class="exp-company">United Talent Agency (UTA)</span>
+              <span class="exp-headline">Domestic and international artist touring logistics</span>
+              <span class="exp-role">Music Assistant · Agent Trainee</span>
+              <span class="exp-date">September 2021 — January 2023</span>
+              <p class="exp-summary">Managed tour and festival marketing for artists including Chase Atlantic, handling venue holds, contracts, and international artist logistics in partnership with finance and legal teams.</p>
+            </div>
           </div>
-          <div class="experience-card">
-            <span class="experience-card-company">Cognizant (YouTube Music)</span>
-            <span class="experience-card-role">Music Generalist, Official Artist Channels</span>
-            <span class="experience-card-date">November 2020 — September 2021</span>
+
+          <div class="exp-card">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <span class="exp-company">Cognizant (YouTube Music)</span>
+              <span class="exp-headline">Official Artist Channel enablement at scale</span>
+              <span class="exp-role">Music Generalist, Official Artist Channels</span>
+              <span class="exp-date">November 2020 — September 2021</span>
+              <p class="exp-summary">Enabled 200+ Official Artist Channels per week at 99%+ accuracy, consolidating artists' YouTube presence by collaborating directly with labels and management teams.</p>
+            </div>
           </div>
-          <div class="experience-card">
-            <span class="experience-card-company">South By Southwest (SXSW)</span>
-            <span class="experience-card-role">Music Partner Programming Coordinator</span>
-            <span class="experience-card-date">August 2019 — March 2020</span>
+
+          <div class="exp-card">
+            <div class="exp-dot" style="background:var(--color-secondary)"></div>
+            <div class="exp-body">
+              <span class="exp-company">South By Southwest (SXSW)</span>
+              <span class="exp-headline">Festival programming for Netflix, Disney, TikTok and more</span>
+              <span class="exp-role">Music Partner Programming Coordinator</span>
+              <span class="exp-date">August 2019 — March 2020</span>
+              <p class="exp-summary">Programmed official SXSW music showcases for major clients including Netflix, Disney, TikTok, and NBC — coordinating talent agencies, record labels, and internal stakeholders across the full event lifecycle.</p>
+            </div>
           </div>
+
+          <div class="exp-card">
+            <div class="exp-dot" style="background:var(--color-sage)"></div>
+            <div class="exp-body">
+              <span class="exp-company">Paramount Pictures</span>
+              <span class="exp-headline">National publicity, film festivals and press junkets</span>
+              <span class="exp-role">National Publicity Intern</span>
+              <span class="exp-date">June 2018 — August 2018 · Los Angeles</span>
+              <p class="exp-summary">Supported the national publicity department on talent tracking, publicity timelines, press junkets, and special events — including a group project presented at the historic Paramount Theatre.</p>
+            </div>
+          </div>
+
         </div>
 
-        <div class="resume-cta fade-in" style="margin-top: var(--space-10);">
-          <div class="resume-text">
-            <p>For the full picture—including detailed responsibilities, skills, and tools—download my resume.</p>
+        <div class="resume-download-area fade-in">
+          <div class="resume-download-text">
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;margin-bottom:var(--space-2);color:var(--color-text);">Full resume available</h3>
+            <p>Download the PDF for complete experience, skills, and references.</p>
           </div>
           <a href="./assets/CAITLIN-GULYAS_Resume-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Resume
+            Download Resume (PDF)
           </a>
         </div>
+
       </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- ═══════════════════════════════════════════ CONTACT ═══ -->
-    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+    <!-- ═══════════════════ CONTACT ═══ -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
       <div class="container container--wide">
         <div class="section-header fade-in">
           <span class="section-eyebrow">Contact</span>
@@ -422,11 +782,15 @@
 
         <div class="contact-grid fade-in">
           <div class="contact-info">
-            <p>I'm actively looking for marketing, communications, and brand strategy roles—remote, hybrid, or in-person in Seattle. If you think I'd be a good fit for your team, I'd love to hear from you.</p>
+            <p>I'm actively looking for marketing, communications, and brand strategy roles — remote, hybrid, or in-person in Seattle. If you think I'd be a good fit, I'd love to hear from you.</p>
             <div class="contact-links">
               <a href="mailto:Caitlin.Gulyas@Gmail.com" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Caitlin.Gulyas@Gmail.com
+              </a>
+              <a href="tel:9729558802" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.42 2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.85-1.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.97 15.5z"/></svg>
+                972-955-8802
               </a>
               <a href="https://www.linkedin.com/in/caitlin-gulyas-319456131" target="_blank" rel="noopener noreferrer" class="contact-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -437,8 +801,9 @@
 
           <div class="contact-aside">
             <h3>What I bring</h3>
-            <p>A blend of strategic thinking and hands-on execution. I've managed global ambassador programs, launched studios in new markets, driven 100M+ media impressions, and coordinated campaigns across time zones and continents.</p>
+            <p>A blend of strategic thinking and hands-on execution. I've independently built global ambassador programs, launched studios in new markets, driven 100M+ media impressions, and coordinated campaigns across time zones and continents.</p>
             <p>I'm looking for roles where I can own campaigns end-to-end, build community, and connect brand storytelling with real business outcomes.</p>
+            <a href="mailto:Caitlin.Gulyas@Gmail.com" class="btn btn--primary" style="margin-top:var(--space-4);">Get in touch</a>
           </div>
         </div>
       </div>
@@ -446,18 +811,19 @@
 
   </main>
 
-  <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+  <!-- ═══════════════════ FOOTER ═══ -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <span class="footer-copy">&copy; 2026 Caitlin Gulyas</span>
       <ul class="footer-links" role="list">
         <li><a href="mailto:Caitlin.Gulyas@Gmail.com">Email</a></li>
         <li><a href="https://www.linkedin.com/in/caitlin-gulyas-319456131" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="./assets/CAITLIN-GULYAS_Resume-2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════ JS ═══ -->
+  <!-- ═══════════════════ JS ═══ -->
   <script defer>
     // Theme toggle
     (function() {
@@ -465,29 +831,27 @@
       const r = document.documentElement;
       let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
       r.setAttribute('data-theme', d);
-      t && t.addEventListener('click', () => {
-        d = d === 'dark' ? 'light' : 'dark';
-        r.setAttribute('data-theme', d);
-        t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+      function updateIcon() {
+        if (!t) return;
         t.innerHTML = d === 'dark'
           ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
           : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+      }
+      updateIcon();
+      t && t.addEventListener('click', () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+        updateIcon();
       });
     })();
 
     // Sticky header shadow
     (function() {
       const header = document.querySelector('.site-header');
-      let ticking = false;
       window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            header.classList.toggle('site-header--scrolled', window.scrollY > 20);
-            ticking = false;
-          });
-          ticking = true;
-        }
-      });
+        header.classList.toggle('site-header--scrolled', window.scrollY > 20);
+      }, { passive: true });
     })();
 
     // Mobile nav
@@ -499,7 +863,7 @@
         hamburger.classList.toggle('open', open);
         hamburger.setAttribute('aria-expanded', open);
       });
-      navLinks && navLinks.addEventListener('click', (e) => {
+      navLinks && navLinks.addEventListener('click', e => {
         if (e.target.tagName === 'A') {
           navLinks.classList.remove('open');
           hamburger.classList.remove('open');
@@ -508,20 +872,51 @@
       });
     })();
 
-    // Active nav link on scroll
+    // Smooth scroll + active nav — scroll-position based (reliable)
     (function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinksAll = document.querySelectorAll('.nav-links a');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            navLinksAll.forEach(l => l.classList.remove('active'));
-            const active = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
-            if (active) active.classList.add('active');
-          }
+      const headerH = () => document.querySelector('.site-header').offsetHeight;
+
+      // Smooth scroll with header offset for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - headerH() - 8;
+          window.scrollTo({ top, behavior: 'smooth' });
         });
-      }, { rootMargin: '-40% 0px -60% 0px' });
-      sections.forEach(s => observer.observe(s));
+      });
+
+      // Build ordered section list
+      const sectionIds = ['home','work','about','resume','contact'];
+      const navItems = {};
+      sectionIds.forEach(id => { navItems[id] = document.getElementById('nav-' + id); });
+
+      function setActive(id) {
+        sectionIds.forEach(sid => {
+          const el = navItems[sid];
+          if (el) el.classList.toggle('active', sid === id);
+        });
+      }
+
+      function updateActive() {
+        const scrollY = window.scrollY;
+        const hh = headerH();
+        // Find which section's top edge we've passed most recently
+        let current = sectionIds[0];
+        sectionIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const top = el.getBoundingClientRect().top + scrollY - hh - 40;
+          if (scrollY >= top) current = id;
+        });
+        setActive(current);
+      }
+
+      // Init
+      updateActive();
+      window.addEventListener('scroll', updateActive, { passive: true });
     })();
   </script>
 
